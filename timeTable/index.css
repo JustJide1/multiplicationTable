@@ -15,8 +15,10 @@ body {
   height: 70vh;
   color: #388e3c;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow: scroll;
 }
 
 section {
