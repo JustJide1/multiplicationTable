@@ -43,7 +43,7 @@
           outputTable.innerHTML += `table of ${i}`;
           for (let j = 1; j <= 12; j++) {
             console.log(`${i} * ${j}= ${i * j}`);
-            outputTable.innerHTML += `<h6>${i} * ${j} = ${i * j}</h6>`;
+            outputTable.innerHTML += `<p>${i} * ${j} = ${i * j}</p><br>`;
           }
         }
       } else if (+firstInput > +secondInput) {
@@ -52,7 +52,7 @@
           outputTable.innerHTML += `table of ${i}`;
           for (let j = 0; j <= 12; j++) {
             console.log(`${i}* ${j} = ${i * j}`);
-            outputTable.innerHTML += `${i}* ${j} = ${i * j}`;
+            outputTable.innerHTML += `<p>${i}* ${j} = ${i * j}</p><br>`;
           }
         }
       } else {
