@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <section>
+      <h1>Time table generator</h1>
+      <input type="number" id="firstInput" />
+      <input type="number" id="secondInput" />
+      <button id="calcBtn" onclick="valueCalc()">Click</button>
+    </section>
+    <div id="outputTable"></div>
+  </body>
+  <script>
+    let firstInput = document.getElementById("firstInput").value.trim();
+    let secondInput = document.getElementById("secondInput").value.trim();
+    let calcBtn = document.getElementById("calcBtn");
+
+    function valueCalc() {
+      let firstInput = document.getElementById("firstInput").value.trim();
+      let secondInput = document.getElementById("secondInput").value.trim();
+      console.log(firstInput, secondInput);
+
+      if (!firstInput || !secondInput) {
+        console.log("please enter all values");
+        outputTable.innerHTML = `<h1>please enter all values</h1>`;
+      } else if (+firstInput < +secondInput) {
+        // for (let i = 1; i <= 12; i++) {
+        //   let firstTable = `${+firstInput} * ${i} = ${+firstInput * i}`;
+        //   console.log(firstTable);
+        // }
+        // for (let j = 1; j <= 12; j++) {
+        //   let secondTable = `${+secondInput} * ${j} = ${+secondInput * j}`;
+        //   console.log(secondTable);
+        // }
+
+        for (let i = +firstInput; i <= +secondInput; i++) {
+          console.log(`table of ${i}`);
+          outputTable.innerHTML += `table of ${i}`;
+          for (let j = 1; j <= 12; j++) {
+            console.log(`${i} * ${j}= ${i * j}`);
+            outputTable.innerHTML += `<h6>${i} * ${j} = ${i * j}</h6>`;
+          }
+        }
+      } else if (+firstInput > +secondInput) {
+        for (let i = +firstInput; i >= +secondInput; i--) {
+          console.log(`table of ${i}`);
+          outputTable.innerHTML += `table of ${i}`;
+          for (let j = 0; j <= 12; j++) {
+            console.log(`${i}* ${j} = ${i * j}`);
+            outputTable.innerHTML += `${i}* ${j} = ${i * j}`;
+          }
+        }
+      } else {
+        console.log("invalid input");
+      }
+    }
+  </script>
+</html>
